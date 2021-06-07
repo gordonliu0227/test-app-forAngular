@@ -1,0 +1,34 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>add a bucket list item</p>
+  </div>
+  <div class="col">
+    <p>Your bucket list ({{ intemCount }})</p>
+  </div>
+</div>
+
+<div class="container color-light">
+  <div class="col">
+    <p class="sm">
+      use this form to add a new bucket list goal, what you want to do
+    </p>
+    <form action="">
+      <input
+        class="txt"
+        type="text"
+        name="item"
+        id=""
+        placeholder="Life goal.."
+        [(ngModel)]="goalText"
+      />
+      <br /><span>{{ goalText }}</span>
+      <input class="btn" type="submit" [value]="btnText" (click)="addItem()" />
+    </form>
+  </div>
+
+  <div class="col">
+    <p class="life-container" *ngFor="let goal of goals, let i = index" (click)="removeItem(i)">
+      {{ goal }}
+    </p>
+  </div>
+</div>
